@@ -1,0 +1,10 @@
+#!/bin/bash -ie
+
+# install hex
+mix archive.install github hexpm/hex ref d78a23f617dda568cc11642ada459cc3b2683787 --force
+
+# install rebar
+mix local.rebar --force
+
+# install Phoenix project generator
+mix archive.install hex phx_new --force

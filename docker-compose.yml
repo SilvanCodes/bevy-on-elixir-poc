@@ -1,0 +1,8 @@
+version: '3'
+services:
+  # See: https://hub.docker.com/_/postgres/
+  postgres:
+    image: postgres:13.9
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

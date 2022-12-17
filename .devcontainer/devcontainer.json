@@ -1,24 +1,29 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
-	"name": "Default Linux Universal",
-	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	"name": "FlamingBirdFlock",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers/features/rust:1": {
+		"ghcr.io/devcontainers/features/rust": {
 			"version": "1.66.0"
 		},
-		"ghcr.io/devcontainers-contrib/features/elixir-asdf:1": {
+		"ghcr.io/devcontainers-contrib/features/elixir-asdf": {
 			"elixirVersion": "1.14.2",
 			"erlangVersion": "25.2"
 		},
-		"ghcr.io/dhoeric/features/flyctl:1": {
+		"ghcr.io/dhoeric/features/flyctl": {
 			"version": "0.0.440"
 		}
 	},
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
+	"onCreateCommand": ".devcontainer/bin/onCreateCommand",
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
 	// Configure tool-specific properties.
