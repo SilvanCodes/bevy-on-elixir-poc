@@ -4,7 +4,7 @@ import Config
 config :flaming_bird_flock, FlamingBirdFlock.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "postgres",
   database: "flaming_bird_flock_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
