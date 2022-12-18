@@ -33,7 +33,8 @@
 				"JakeBecker.elixir-ls",
 				"pantajoe.vscode-elixir-credo",
 				"phoenixframework.phoenix",
-				"rust-lang.rust-analyzer"
+				"rust-lang.rust-analyzer",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},
