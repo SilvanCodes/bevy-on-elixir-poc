@@ -1,0 +1,6 @@
+#!/bin/bash -i
+
+# hex (v2.0.0 -> see: https://github.com/hexpm/hex/commit/d78a23f617dda568cc11642ada459cc3b2683787)
+mix archive.install github hexpm/hex ref d78a23f617dda568cc11642ada459cc3b2683787 --force
+# rebar (matching version depending on elixir? -> see: https://github.com/elixir-lang/elixir/blob/cc9e9b29a7b473010ed17f894e6a576983a9c294/lib/mix/lib/mix/tasks/local.rebar.ex#L124)
+mix local.rebar --force

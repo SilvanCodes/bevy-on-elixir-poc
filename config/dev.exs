@@ -25,8 +25,7 @@ config :flaming_bird_flock, FlamingBirdFlockWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "dKPXE0f+Ob6PP6putbIK4oLx5OQEH6USKzf4oGsqLeGzSqZJqCvXXfc+CGAXIeDg",
   watchers: [
-    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support
