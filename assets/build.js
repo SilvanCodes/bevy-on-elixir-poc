@@ -22,6 +22,7 @@ let opts = {
     format: 'esm',
     outdir: '../priv/static/assets',
     logLevel: 'info',
+    publicPath: 'assets',
     loader,
     plugins
 }
