@@ -1,13 +1,4 @@
 #!/bin/bash -ie
 
-# script from .devcontainer/bin
-install-mix-tooling
-
-# install Phoenix project generator
-mix archive.install hex phx_new --force
-
 # setup application
 mix setup
-
-# install wasm-pack
-cargo install wasm-pack
