@@ -42,6 +42,7 @@ defmodule FlamingBirdFlock.MixProject do
       {:phoenix_live_view, "~> 0.17.5"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.6"},
+      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
@@ -59,17 +60,11 @@ defmodule FlamingBirdFlock.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: [
-        "deps.get",
-        "ecto.setup",
-        "cmd --cd assets/hello-wasm wasm-pack build",
-        "cmd --cd assets npm ci",
-        "cmd --cd assets node build.js"
-      ],
+      setup: ["deps.get", "ecto.setup"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["cmd --cd assets node build.js --deploy", "phx.digest"]
+      "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
   end
 end
