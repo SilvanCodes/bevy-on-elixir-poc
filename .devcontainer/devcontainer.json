@@ -8,28 +8,7 @@
 	],
 	"service": "devcontainer",
 	"workspaceFolder": "/workspace",
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {
-	// 	"ghcr.io/devcontainers/features/rust": {
-	// 		"version": "1.66.0"
-	// 	},
-	// 	"ghcr.io/devcontainers-contrib/features/elixir-asdf": {
-	// 		"elixirVersion": "1.14.2",
-	// 		"erlangVersion": "25.2"
-	// 	},
-	// 	"ghcr.io/dhoeric/features/flyctl": {
-	// 		"version": "0.0.440"
-	// 	},
-	// 	"ghcr.io/devcontainers/features/node": {
-	// 		"version": "18.12.1"
-	// 	}
-	// },
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
 	"onCreateCommand": ".devcontainer/bin/onCreateCommand",
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -37,10 +16,9 @@
 				"pantajoe.vscode-elixir-credo",
 				"phoenixframework.phoenix",
 				"rust-lang.rust-analyzer",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"tamasfe.even-better-toml"
 			]
 		}
 	}
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
