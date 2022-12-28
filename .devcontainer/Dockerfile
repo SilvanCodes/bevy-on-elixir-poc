@@ -29,8 +29,8 @@ RUN sudo install-packages inotify-tools
 COPY .devcontainer/bin/install-wasm-target /usr/bin/
 RUN install-wasm-target
 
-# install wasm-pack, see: https://rustwasm.github.io/docs/wasm-pack/
-RUN bash -ic 'cargo install wasm-pack'
+# install wasm-bindgen-cli, see: https://rustwasm.github.io/docs/wasm-bindgen/introduction.html
+RUN bash -ic 'cargo install wasm-bindgen-cli'
 
 # add binaries installed via cargo to PATH
 ENV PATH=$HOME/.cargo/bin:$PATH
