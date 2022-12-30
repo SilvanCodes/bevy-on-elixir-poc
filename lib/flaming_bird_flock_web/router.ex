@@ -17,6 +17,8 @@ defmodule FlamingBirdFlockWeb.Router do
   scope "/", FlamingBirdFlockWeb do
     pipe_through :browser
 
+    live "/rust", RustLive
+
     get "/", PageController, :index
   end
 

@@ -95,6 +95,9 @@ defmodule FlamingBirdFlockWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
+      # Layout components
+      import Phexel
+
       import FlamingBirdFlockWeb.ErrorHelpers
       import FlamingBirdFlockWeb.Gettext
       alias FlamingBirdFlockWeb.Router.Helpers, as: Routes

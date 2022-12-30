@@ -1,0 +1,5 @@
+iframe {
+    border: none;
+    inline-size: 80vw;
+    block-size: 80vh;
+}

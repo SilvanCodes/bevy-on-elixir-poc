@@ -48,7 +48,8 @@ defmodule FlamingBirdFlock.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:phexel, "~> 0.1", git: "https://github.com/silvanCodes/phexel"}
     ]
   end
 
@@ -60,7 +61,8 @@ defmodule FlamingBirdFlock.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup"],
+      setup: ["deps.get", "ecto.setup", "rust.setup"],
+      "rust.setup": ["cmd --cd assets/rust ./build-rust"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],

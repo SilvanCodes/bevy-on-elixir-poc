@@ -2,9 +2,19 @@
 // Remove this line if you add a your own CSS build pipeline (e.g postcss).
 import "../css/app.css"
 
+// window.addEventListener("message", (event) => {
+//     if (event.origin !== window.origin) {
+//         console.warn("Other origin:", event.origin)
+//     }
+
+//     console.log("Host got message:", event.data);
+
+//     // …
+// }, false);
+
 // If you want to use Phoenix channels, run `mix help phx.gen.channel`
 // to get started and then uncomment the line below.
-// import "./user_socket.js"
+import "./user_socket.js"
 
 // You can include dependencies in two ways.
 //
