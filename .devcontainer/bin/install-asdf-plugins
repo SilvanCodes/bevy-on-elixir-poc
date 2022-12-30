@@ -9,11 +9,3 @@ asdf plugin update erlang 0d402e65a1328ed06c7920184f9806acfe251213
 # install and pin elixir: https://github.com/asdf-vm/asdf-elixir
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf plugin update elixir 1693b354bb08ff24e356bbcf3be99b177c32a06e
-
-# install and pin nodejs: https://github.com/asdf-vm/asdf-nodejs
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin update nodejs c9e5df443b932f22e79e178a52866b053065be80
-
-# install and pin rust: https://github.com/asdf-community/asdf-rust
-asdf plugin add rust https://github.com/asdf-community/asdf-rust.git
-asdf plugin update nodejs 72cc8e0ee3cb1ffce2383969af6b416972dbd1e3

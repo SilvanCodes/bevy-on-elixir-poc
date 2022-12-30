@@ -25,15 +25,28 @@ RUN bash -ic 'mix archive.install hex phx_new --force'
 # get inotify-tools for live reload from phoenix, see: https://hexdocs.pm/phoenix/installation.html#inotify-tools-for-linux-users
 RUN sudo install-packages inotify-tools
 
+# install rustup, see: https://www.rust-lang.org/tools/install
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# add rustup and binaries installed via cargo to PATH
+ENV PATH=$HOME/.cargo/bin:$PATH
+
+ENV RUST_VERSION=1.66.0
+
+RUN rustup install $RUST_VERSION
+
 # install wasm as a compilation target for rustc
-COPY .devcontainer/bin/install-wasm-target /usr/bin/
-RUN install-wasm-target
+RUN rustup target add wasm32-unknown-unknown
 
 # install wasm-bindgen-cli, see: https://rustwasm.github.io/docs/wasm-bindgen/introduction.html
 RUN bash -ic 'cargo install wasm-bindgen-cli'
 
-# add binaries installed via cargo to PATH
-ENV PATH=$HOME/.cargo/bin:$PATH
+# required tooling for some crates
+RUN sudo install-packages \
+    # required for alsa-sys crate
+    libasound2-dev \
+    # required for libudev-sys crate
+    libudev-dev
 
 # standard tooling
 RUN sudo install-packages \
